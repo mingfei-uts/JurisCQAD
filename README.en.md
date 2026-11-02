@@ -2,14 +2,9 @@
 
 [简体中文](README.md) | **English**
 
-A cleaned Chinese legal question-answering dataset containing **43,104 records**.
+This repository contains **JurisCQAD**, the dataset for our paper [**From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation**](https://aclanthology.org/2026.acl-long.776/), accepted to **ACL 2026 as an Oral presentation**.
 
-## Associated paper
-
-JurisCQAD was introduced in the following ACL 2026 paper. This repository provides a cleaned version of the dataset:
-
-[**From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation**](https://aclanthology.org/2026.acl-long.776/)  
-Mingfei Lu, Yi Zhang, Mengjia Wu, Yue Feng · ACL 2026
+JurisCQAD is a Chinese legal consultation question-answering dataset. This release contains **43,104 records**.
 
 ## Data file
 

@@ -2,14 +2,9 @@
 
 **简体中文** | [English](README.en.md)
 
-清理后的中文法律问答数据集，共 **43,104 条记录**。
+本仓库提供我们论文 [**From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation**](https://aclanthology.org/2026.acl-long.776/) 的数据集 **JurisCQAD**。我们的论文已被 **ACL 2026 接收为 Oral（口头报告）**。
 
-## 论文来源
-
-JurisCQAD 是以下 ACL 2026 工作提出的数据集，本仓库提供其清理后的版本：
-
-[**From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation**](https://aclanthology.org/2026.acl-long.776/)  
-Mingfei Lu, Yi Zhang, Mengjia Wu, Yue Feng · ACL 2026
+JurisCQAD 是一个中文法律咨询问答数据集，当前发布版本包含 **43,104 条记录**。
 
 ## 数据文件
 
