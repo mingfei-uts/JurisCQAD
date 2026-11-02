@@ -1,24 +1,24 @@
 # JurisCQAD
 
-**简体中文** | [English](README.en.md)
+**English** | [简体中文](README.zh-CN.md)
 
-本仓库提供我们论文 [**From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation**](https://aclanthology.org/2026.acl-long.776/) 的数据集 **JurisCQAD**。我们的论文已被 **ACL 2026 接收为 Oral（口头报告）**。
+This repository contains **JurisCQAD**, the dataset for our paper [**From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation**](https://aclanthology.org/2026.acl-long.776/), accepted to **ACL 2026 as an Oral presentation**.
 
-JurisCQAD 是一个中文法律咨询问答数据集，当前发布版本包含 **43,104 条记录**。
+JurisCQAD is a Chinese legal consultation question-answering dataset. This release contains **43,104 records**.
 
-## 数据文件
+## Data file
 
-[JurisCQAD_cleaned.jsonl.gz](JurisCQAD_cleaned.jsonl.gz) 为 gzip 无损压缩文件。解压后是 UTF-8 编码的 JSON Lines 文件，每行一个 JSON 对象，包含以下字段：
+[JurisCQAD_cleaned.jsonl.gz](JurisCQAD_cleaned.jsonl.gz) is a losslessly gzip-compressed file. After decompression, it is a UTF-8 JSON Lines file with one JSON object per line and the following fields:
 
-| 字段 | 含义 |
+| Field | Description |
 | --- | --- |
-| `问题内容` | 问题文本 |
-| `原答案` | 数据集中标注的原答案 |
-| `错误答案` | 数据集中标注的错误答案 |
+| `问题内容` | Question text |
+| `原答案` | Answer labeled as the original answer in the dataset |
+| `错误答案` | Answer labeled as incorrect in the dataset |
 
-## 读取方式
+## Reading the data
 
-下载数据文件后，使用 Python 标准库直接读取，无需预先解压：
+Download the data file and read it directly with the Python standard library. No prior decompression is required:
 
 ```python
 import gzip
@@ -32,17 +32,17 @@ with gzip.open("JurisCQAD_cleaned.jsonl.gz", "rt", encoding="utf-8") as f:
         incorrect_answer = record["错误答案"]
 ```
 
-## 完整性校验
+## Integrity check
 
-解压后 `JurisCQAD_cleaned.jsonl` 的 SHA-256：
+SHA-256 of the decompressed `JurisCQAD_cleaned.jsonl`:
 
 ```text
 52f812c4fb3700740a97f78fb9b0119dbd982b05a6f63a4ff96e63d5495ff6b1
 ```
 
-## 引用
+## Citation
 
-如果你在研究中使用 JurisCQAD，请引用：
+If you use JurisCQAD in your research, please cite:
 
 ```bibtex
 @inproceedings{lu-etal-2026-query,
