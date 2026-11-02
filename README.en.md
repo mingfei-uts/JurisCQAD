@@ -4,6 +4,13 @@
 
 A cleaned Chinese legal question-answering dataset containing **43,104 records**.
 
+## Associated paper
+
+JurisCQAD was introduced in the following ACL 2026 paper. This repository provides a cleaned version of the dataset:
+
+[**From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation**](https://aclanthology.org/2026.acl-long.776/)  
+Mingfei Lu, Yi Zhang, Mengjia Wu, Yue Feng · ACL 2026
+
 ## Data file
 
 [JurisCQAD_cleaned.jsonl.gz](JurisCQAD_cleaned.jsonl.gz) is a losslessly gzip-compressed file. After decompression, it is a UTF-8 JSON Lines file with one JSON object per line and the following fields:
@@ -30,24 +37,38 @@ with gzip.open("JurisCQAD_cleaned.jsonl.gz", "rt", encoding="utf-8") as f:
         incorrect_answer = record["错误答案"]
 ```
 
-## Cleaning scope
-
-This version underwent de-identification, exact-record deduplication, screening of promotional and non-substantive answers, isolation of generation artifacts, and removal of explicit answer-label cues. The same leading-header cleanup rules were applied to both answer fields, while substantive legal expressions were preserved.
-
-Quarantined records and audit logs containing removed text are not published.
-
-## Usage notes
-
-- Field names reflect the dataset's existing annotations; they do not imply that every answer has been verified for legal correctness.
-- During evaluation, hide the original field names, use anonymous candidates in randomized order, and store labels separately.
-- Keep identical or similar questions in the same partition when creating training and test sets to avoid leakage.
-- Removing explicit cues does not eliminate all possible shortcuts based on writing style, length, or other features.
-- The data is intended for research and should not be used as legal advice for individual cases.
-
 ## Integrity check
 
 SHA-256 of the decompressed `JurisCQAD_cleaned.jsonl`:
 
 ```text
 52f812c4fb3700740a97f78fb9b0119dbd982b05a6f63a4ff96e63d5495ff6b1
+```
+
+## Citation
+
+If you use JurisCQAD in your research, please cite:
+
+```bibtex
+@inproceedings{lu-etal-2026-query,
+    title = "From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation",
+    author = "Lu, Mingfei  and
+      Zhang, Yi  and
+      Wu, Mengjia  and
+      Feng, Yue",
+    editor = "Liakata, Maria  and
+      Moreira, Viviane P.  and
+      Zhang, Jiajun  and
+      Jurgens, David",
+    booktitle = "Proceedings of the 64th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.acl-long.776/",
+    doi = "10.18653/v1/2026.acl-long.776",
+    pages = "17064--17078",
+    ISBN = "979-8-89176-390-6",
+    abstract = "Legal consultation question answering (Legal CQA) presents unique challenges compared to traditional legal QA tasks, including the scarcity of high-quality training data, complex task composition, and strong contextual dependencies. To address these, we construct JurisCQAD, a large-scale dataset of over 43,000 real-world Chinese legal queries annotated with expert-validated positive and negative responses, and design a structured task decomposition that converts each query into a legal element graph integrating entities, events, intents, and legal issues. We further propose JurisMA, a modular multi-agent framework supporting dynamic routing, statutory grounding, and stylistic optimization. Combined with the element graph, the framework enables strong context-aware reasoning, effectively capturing dependencies across legal facts, norms, and procedural logic. Trained on JurisCQAD and evaluated on a refined LawBench, our system significantly outperforms both general-purpose and legal-domain LLMs across multiple lexical and semantic metrics, demonstrating the benefits of interpretable decomposition and modular collaboration in Legal CQA."
+}
 ```
